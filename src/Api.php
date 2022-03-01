@@ -89,14 +89,14 @@ class Api
      * MyApi constructor.
      * @param null|string $username
      * @param null|string $password
-     * @param null|integer $customerId
-     * @param null|string $storage
+     * @param integer|null $customerId
+     * @param string|null $storage
      * @param bool $trace Set trace of SoapClient to this value
      * @throws \Exception
      * @throws OfflineException
      * @throws SecurityException
      */
-    public function __construct($username = null, $password = null, $customerId = null, $storage = null, $trace = true)
+    public function __construct(string $username = '', string $password = '', int|null $customerId = null, string|null $storage = null, bool $trace = true)
     {
         if (mb_strlen($username) > 32) {
             throw new SecurityException('$username is longer than 32 characters');
