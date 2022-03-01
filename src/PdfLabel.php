@@ -80,7 +80,7 @@ class PdfLabel implements ILabel
             }
         }
 
-        return $pdf->Output(null, 'S');
+        return $pdf->Output('', 'S');
     }
 
     /**
